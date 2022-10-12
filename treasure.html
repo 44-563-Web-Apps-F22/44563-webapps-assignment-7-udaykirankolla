@@ -1,72 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Treasure hunt by Udaykiran Kolla</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-        crossorigin="anonymous"></script>
-
+  <title>Treasure Hunt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</head>
 <body>
-<h1>Treasure hunt</h1>
-<div class="container border" style="background-color: blanchedalmond">
-    <p  class="font-italic"> Click on the chests to search for treasure</p>
- </div>
- <div class="container border" id="chests" style="background-color: gainsboro">
-     <p class="font-weight-normal">Number of chests checked is zero. </p>
- </div>
- <div class="container border" id="score" style="background-color: yellowgreen"> 
-    <p class="font-weight-normal">Score is unknown.</p> 
- </div>
- <div class="container border" id="help" style="background-color: pink">
-    <p class="font-weight-bold">Help report</p> 
- </div>
- <br>
- <div class="image-grid d-flex flex-column justify-content-center align-items-center">
- <div class="d-flex">
-    <div><img src="tresure chest close.webp" height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp" height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp" height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp" height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp" height="100" width="100" alt="Treasure Chest Picture"></div>
+  <h1 style="color:rgb(15, 167, 15);font-weight:bold; font-family:'Times New Roman', Times, serif">Treasure hunt by UdayKiran Kolla</h1>
+  <p style="font-size:large ;">Click on the chests to search for treasure</p>
+  <p id="chests" style="background-color:bisque ;color:chocolate">Number of chests checked is zero.</p>
+  <p id="score" style="font-weight:lighter ;">Score is unknown.</p>
+  <p id="help" style="color:red">Help report</p>
+  <div class="row container">
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="0" onclick="check(0)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="1" onclick="check(1)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="2" onclick="check(2)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="3" onclick="check(3)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="4" onclick="check(4)"
+            width="400" height="400"></div>
 </div>
 
-<div class="d-flex">
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
+<div class="row container">
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="5" onclick="check(5)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="6" onclick="check(6)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="7" onclick="check(7)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="8" onclick="check(8)"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="9" onclick="check(9)"
+            width="400" height="400"></div>
+</div>
+<div class="row container">
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="10"
+            onclick="check(10)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="11"
+            onclick="check(11)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure map.webp" class="img-fluid" alt="Responsive image" id="12" onclick="help()"
+            width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="13"
+            onclick="check(13)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="14"
+            onclick="check(14)" width="400" height="400"></div>
 </div>
 
-<div class="d-flex">
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure map.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
+<div class="row container">
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="15"
+            onclick="check(15)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="16"
+            onclick="check(16)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="17"
+            onclick="check(17)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="18"
+            onclick="check(18)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="19"
+            onclick="check(19)" width="400" height="400"></div>
 </div>
+<div class="row container">
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="20"
+            onclick="check(20)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="21"
+            onclick="check(21)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="22"
+            onclick="check(22)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="23"
+            onclick="check(23)" width="400" height="400"></div>
+    <div class="col-md-2"><img src="tresure chest.jpg" class="img-fluid" alt="Responsive image" id="24"
+            onclick="check(24)" width="400" height="400"></div>
+</div>
+    <script>
+        ids = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14",
+            "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"
+        ]
 
-<div class="d-flex">
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-</div>
+        var chestCount = 0;
+        var score = 0;
+        var lastCheck = 12;
+        var treasureLocation = 18;
 
-<div class="d-flex">
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-    <div><img src="tresure chest close.webp"height="100" width="100" alt="Treasure Chest Picture"></div>
-</div>
-</div>
-</div>
-</body>
-</html>
+
+        function help() {
+            let result = ""
+            if ((Math.floor(lastCheck / 5) == 3.0) && (lastCheck % 5 == 3)) {
+                var isWon = true
+            }
+            if (isWon) {
+                result = "Sorry, no help available"
+            } else if (Math.floor(lastCheck / 5) == 3.0) {
+                if (lastCheck > treasureLocation) {
+                    result = "left"
+                } else if (lastCheck < treasureLocation) {
+                    result = "right"
+                }
+            } else if (lastCheck % 5 == 3) {
+                if (lastCheck > treasureLocation) {
+                    result = "up"
+                } else if (lastCheck < treasureLocation) {
+                    result = "down"
+                }
+            } else {
+                result = "Sorry, no help available"
+            }
+            document.getElementById('help').innerText = result
+            score += 2
+            document.getElementById('score').innerText = "Score is: " + score
+        }
+
+        function check(position) {
+            let imageID = ids[position]
+            if (position == treasureLocation) {
+                document.getElementById(imageID).src = 'tresure full.jpg'
+                score++
+            } else {
+                document.getElementById(imageID).src = 'tresure empty.jpg'
+            }
+            chestCount++;
+            document.getElementById('chests').innerText = "Number of chests: " + chestCount;
+            document.getElementById('score').innerText = "Score is: " + score;
+            lastCheck = position;
+        }
+
+        function reset() {
+            var chestCount = 0;
+            var score = 0;
+            var lastCheck = 12;
+            var treasureLocation = generateRandomIntegerInRange(0, 24);
+        }
+
+        function generateRandomIntegerInRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+
+  </body>
+  </html>
