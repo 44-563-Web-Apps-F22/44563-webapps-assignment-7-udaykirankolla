@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			background-color: red;
+		}
+
+		.flex-container>div {
+			/div children of the flex container/
+			background-color: #f1f1f1;
+			margin: 10px;
+			padding: 20px;
+			font-size: 30px;
+		}
+
+		/* Responsive layout */
+		@media (max-width: 600px) {
+			.flex-container {
+				flex-direction: column;
+				background-color: green;
+			}
+		}
+	</style>
+</head>
+
+
+
+<body>
+	<h2>UdayKiran Kolla builds a Cycler</h2>
+	<input type="text" id="textID" />
+	<br />
+	<br />
+	<div class="flex-container" id="target">
+		<div class="cycler">row item 1</div>
+		<div class="cycler">row item 2</div>
+		<div class="cycler">row item 3</div>
+	</div>
+
+
+	<p> Press the button to create an new element type div and add to the container.
+	</p>
+	<button onclick="makeNewDiv()">Add value</button>
+	<button onclick="get()">Get</button>
+	<button onclick="spin()">Spin</button>
+
+
+</body>
+<script>
+	function makeNewDiv() {
+		document.createElement("div").innerHTML = document.getElementById('textID').value
+		document.createElement("div").className = "cycler"
+		document.getElementById('target').appendChild(document.createElement("div"))
+	}
+
+	function get() {
+		if (document.getElementsByClassName('cycler').length > 0) {
+			document.getElementsByClassName('cycler')[document.getElementsByClassName('cycler').length - 1].remove()
+		}
+
+	}
+
+	function spin() {
+		if (document.getElementsByClassName('cycler').length > 1) {
+			let removedText = document.getElementsByClassName('cycler')[document.getElementsByClassName('cycler').length - 1].innerText
+			let removedItem = document.getElementsByClassName('cycler')[document.getElementsByClassName('cycler').length - 1].remove()
+			let ele = document.createElement('div')
+			ele.innerText = removedText
+			document.getElementById('target').insertBefore(ele, document.getElementById('target').firstChild)
+		}
+
+	}
+</script>
+
+</html>
