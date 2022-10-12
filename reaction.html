@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>setTimeout use</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+</head>
+
+<body>
+
+  <h1> Reaction by UdayKiran Kolla </h1>
+
+  <p id="target">Your time </p>
+  <p id="countdown">Count</p>
+  <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
+  <button type="button" class="btn btn-primary" onclick="recordReact()">React Now</button>
+  <p id="target"></p>
+  <script>
+    let myTime = undefined
+
+    function recordReact() {
+      myTime = Date.now()
+      console.log(myTime)
+    }
+
+    function startTime() {
+      for (let index = 0; index < 4; index++) {
+        setTimeout(() => {
+          document.getElementById('countdown').innerHTML = index
+        }, (3 - index) * 1000)
+
+      }
+
+      setTimeout(() => {
+        if (myTime == undefined) {
+          document.getElementById('target').innerHTML = "Too Slow"
+
+        } else {
+          let currentTime = Date.now()
+          let difference = Math.abs(currentTime - myTime)
+          document.getElementById('target').innerHTML = "Time was " + difference
+        }
+
+      }, 3000)
+    }
+  </script>
+
+</body>
+
+</html>
